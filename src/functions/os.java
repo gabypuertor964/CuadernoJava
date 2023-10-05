@@ -1,7 +1,5 @@
 package functions;
 
-
-
 public class os {
     public static void clear(){
         try{

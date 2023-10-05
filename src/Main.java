@@ -37,7 +37,7 @@ public class Main {
         System.out.print("Opcion: ");
         int opcion = input.nextInt();
 
-        System.out.println(opcion);
+        //Limpiar la consola
         os.clear();
 
         //Cerrar el objeto de tipo Scanner
