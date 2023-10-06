@@ -8,6 +8,9 @@ import farm.Perro;
 import school.Profesor;
 import concessionaire.Taxi;
 import concessionaire.Bus;
+import university.TeacherHour;
+import university.StudentMagister;
+import university.StudentUndergraduate;
 
 public class Main {
 
@@ -21,6 +24,7 @@ public class Main {
                 {1,"Granja",},
                 {2,"Escuela"},
                 {3,"Concesionario"},
+                {4,"University"},
             }
         }
     };
@@ -131,6 +135,41 @@ public class Main {
                         Display.footer();
                     break;
                      
+                    case 4:
+                        //Limpiar la consola
+                        Os.clear();
+
+                        //Imprimir la cabecera del aplicativo
+                        Display.header("Ha elegido Universidad");
+
+                        //Instanciar la clase TeacherHour
+                        TeacherHour teacherHour = new TeacherHour("A123456789", "Pepito Perez", "Contabilidad",10);
+
+                        //Titulo divisor de contenido
+                        Display.lineContent("Informacion del Docente", Optional.of("/"), Optional.of("double"));
+
+                        //Obtener la informacion del docente
+                        teacherHour.getData();
+
+                        //Instanciar la clase correspondiente
+                        StudentMagister studentMagister = new StudentMagister("A23456789","Juanito Rodriguez","UNAD","Si");
+
+                        Display.lineContent("Informacion del Estudiante de Maestria", Optional.of("/"), Optional.of("double"));
+
+                        //Obtener la informacion del estudiante
+                        studentMagister.getData();
+
+                        //Instanciar la clase correspondiente
+                        StudentUndergraduate studentUndergraduate = new StudentUndergraduate("A345678901","Luiz Rodriguez","Politecnico Internacional","Administracion de empresas");
+
+                        Display.lineContent("Informacion del Estudiante de Pregrado", Optional.of("/"), Optional.of("double"));
+
+                        //Objener la infomrmaicon del estudiante
+                        studentUndergraduate.getData();
+
+                        Display.footer();
+                    break;
+
                     default:
                         Display.lineContent("Opcion Invalida", Optional.of("="), Optional.of("double"));
                     break;
@@ -139,7 +178,6 @@ public class Main {
 
             default:
                 Display.lineContent("Opcion Invalida", Optional.of("="), Optional.of("double"));
-
             break;
         }
     }

@@ -43,6 +43,6 @@ public class Display extends Styles{
      * Imprime un pie de página.
      */
     public static void footer(){
-        System.out.println(printText("",Optional.of("="),Optional.empty()));
+        System.out.println(printText("",Optional.of("="),Optional.of("double")));
     }
 }
