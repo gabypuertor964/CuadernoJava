@@ -1,46 +1,35 @@
-//Importancion de Paqueteria
-import functions.styles;
-import functions.os;
-import java.util.Optional;
 import java.util.Scanner;
+import tools.Display;
 
 public class Main {
 
-    public static void main(String[] args) {
-        //Arreglo contendor de las opciones disponibles
-        Object[][] menu={
-            {1,"POO",
-                new Object[][]{
-                    {1,"Granja"},
-                    {2,"Escuela"}
-                }
+    /* Declaración de atributos */
+    private static Scanner option = new Scanner(System.in);
+    private static Object[][] menu = {
+        {1,"POO",
+            new Object[][]{
+                {1,"Granja"},
+                {2,"Escuela"}
             }
-        };
+        }
+    };
 
-        //Instanciamiento de la clase Scanner
-        Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
 
-        //Imprimir mensaje de bienvenida
-        System.out.println(styles.printLitle("Bienvenido al sistema de aprendizaje",Optional.empty()));
+        Display.header("Seleccione una opción");
 
-        System.out.println(styles.printLitle("Seleccione una tematica",Optional.of(true)));
-
-        //Mostrado del menu de opciones
-        for(int i=0;i<menu.length;i++){
-            System.out.println("  "+menu[i][0]+". "+menu[i][1]);
-        };
-
-        //Salto de linea
-        System.out.println("\r");
-
-        //Ingreso de la opcion
-        System.out.print("Opcion: ");
-        int opcion = input.nextInt();
-
-        //Limpiar la consola
-        os.clear();
-
-        //Cerrar el objeto de tipo Scanner
-        input.close();
+        System.out.print("Opción: ");
+        int option = Main.option.nextInt();
+        switch (option) {
+            case 1:
+                System.out.println("POO");
+                break;
+            case 2:
+                System.out.println("Escuela");
+                break;
+            default:
+                System.out.println("Opción no válida");
+                break;
+        }
     }
 }

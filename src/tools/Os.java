@@ -1,6 +1,10 @@
-package functions;
+package tools;
 
-public class os {
+public class Os {
+
+    /**
+     * Limpia la consola.
+     */
     public static void clear(){
         try{
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
