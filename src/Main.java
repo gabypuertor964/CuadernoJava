@@ -43,6 +43,7 @@ public class Main {
 
         switch (option) {
 
+            //POO
             case 1:
                 //Limpiar la consola
                 Os.clear();
@@ -60,6 +61,8 @@ public class Main {
                 int subOption = Main.subOption.nextInt();
 
                 switch (subOption) {
+
+                    //Granja
                     case 1:
                         //Limpiar la consola
                         Os.clear();
@@ -80,6 +83,7 @@ public class Main {
                         Display.footer();
                     break;
    
+                    //Escuela
                     case 2:
 
                         //Limpiar la consola
@@ -98,6 +102,7 @@ public class Main {
                         Display.footer();
                     break;
 
+                    //Concesionario
                     case 3:
                         //Limpiar la consola
                         Os.clear();
@@ -125,8 +130,7 @@ public class Main {
                         //Imprimir el pie de página
                         Display.footer();
                     break;
-                
-                    
+                     
                     default:
                         Display.lineContent("Opcion Invalida", Optional.of("="), Optional.of("double"));
                     break;
