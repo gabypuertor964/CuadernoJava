@@ -5,6 +5,7 @@ import tools.Display;
 import tools.Os;
 
 import granja.Perro;
+import escuela.Profesor;
 
 public class Main {
 
@@ -73,6 +74,26 @@ public class Main {
                         System.out.println("Patas:" + perro.getPatas());
                         System.out.println("Raza:" + perro.getRaza());
 
+                        //Imprimir el pie de página
+                        Display.footer();
+                    break;
+
+                    case 2:
+
+                        //Limpiar la consola
+                        Os.clear();
+
+                        //Imprimir la cabecera del aplicativo
+                        Display.header("Ha elegido Escuela");
+
+                        //Instanciar un objeto de tipo Profesor
+                        Profesor profesor = new Profesor("Juan","Perez",30,"123456789");
+
+                        //Obtener la informacion del Profesor
+                        profesor.getData();
+
+                        //Imprimir el pie de página
+                        Display.footer();
                     break;
                 
                     default:

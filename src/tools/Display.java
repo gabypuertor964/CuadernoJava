@@ -27,7 +27,6 @@ public class Display extends Styles{
         System.out.println(printText(content,symbol,salt));
     }
 
-
     /**
      * Imprime el título principal y un subtítulo personalizado.
      * 
@@ -38,5 +37,12 @@ public class Display extends Styles{
         System.out.println(printText("Bienvenido al sistema de aprendizaje",Optional.of("="),Optional.empty()));
 
         lineContent(subtitle, Optional.of("="), Optional.of("down"));
+    }
+
+    /**
+     * Imprime un pie de página.
+     */
+    public static void footer(){
+        System.out.println(printText("",Optional.of("="),Optional.empty()));
     }
 }
