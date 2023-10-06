@@ -4,8 +4,10 @@ import java.util.Optional;
 import tools.Display;
 import tools.Os;
 
-import granja.Perro;
-import escuela.Profesor;
+import farm.Perro;
+import school.Profesor;
+import concessionaire.Taxi;
+import concessionaire.Bus;
 
 public class Main {
 
@@ -17,7 +19,8 @@ public class Main {
         {1,"POO",
             new Object[][]{
                 {1,"Granja",},
-                {2,"Escuela"}
+                {2,"Escuela"},
+                {3,"Concesionario"},
             }
         }
     };
@@ -39,8 +42,8 @@ public class Main {
         int option = Main.option.nextInt();
 
         switch (option) {
-            case 1:
 
+            case 1:
                 //Limpiar la consola
                 Os.clear();
 
@@ -58,7 +61,6 @@ public class Main {
 
                 switch (subOption) {
                     case 1:
-
                         //Limpiar la consola
                         Os.clear();
 
@@ -77,7 +79,7 @@ public class Main {
                         //Imprimir el pie de página
                         Display.footer();
                     break;
-
+   
                     case 2:
 
                         //Limpiar la consola
@@ -95,7 +97,36 @@ public class Main {
                         //Imprimir el pie de página
                         Display.footer();
                     break;
+
+                    case 3:
+                        //Limpiar la consola
+                        Os.clear();
+
+                        //Imprimir la cabecera del aplicativo
+                        Display.header("Ha elegido Concesionario");
+
+                        //Instanciar un objeto de tipo Taxi
+                        Taxi taxi = new Taxi("ABC123","Chevrolet",200,"2015");
+
+                        Display.lineContent("Informacion Taxi", Optional.of("/"), Optional.of("double"));
+
+                        //Obtener la informacion del Taxi
+                        taxi.getData();
+
+                        //Instanciamiento clase bus
+                        Bus bus = new Bus("DEF456","Mercedes Benz",300,100);
+
+                        //Titulo divisor de contenido
+                        Display.lineContent("Informacion Bus", Optional.of("/"), Optional.of("double"));
+
+                        //Obtener la informacion del Bus
+                        bus.getData();
+
+                        //Imprimir el pie de página
+                        Display.footer();
+                    break;
                 
+                    
                     default:
                         Display.lineContent("Opcion Invalida", Optional.of("="), Optional.of("double"));
                     break;

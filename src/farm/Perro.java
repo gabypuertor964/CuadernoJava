@@ -1,4 +1,4 @@
-package granja;
+package farm;
 
 public class Perro extends Mamifero {
 

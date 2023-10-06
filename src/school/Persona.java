@@ -1,4 +1,4 @@
-package escuela;
+package school;
 
 public class Persona {
 
