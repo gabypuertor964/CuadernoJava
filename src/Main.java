@@ -11,6 +11,9 @@ import concessionaire.Bus;
 import university.TeacherHour;
 import university.StudentMagister;
 import university.StudentUndergraduate;
+import process.ProcessManagement;
+import process.ProcessShortTerm;
+import process.ProcessLongTerm;
 
 public class Main {
 
@@ -25,6 +28,7 @@ public class Main {
                 {2,"Escuela"},
                 {3,"Concesionario"},
                 {4,"University"},
+                {5,"Procesos"},
             }
         }
     };
@@ -166,6 +170,32 @@ public class Main {
 
                         //Objener la infomrmaicon del estudiante
                         studentUndergraduate.getData();
+
+                        Display.footer();
+                    break;
+
+                    case 5:
+                        //Limpiar la consola
+                        Os.clear();
+
+                        //Imprimir la cabecera del aplicativo
+                        Display.header("Ha elegido Procesos");
+
+                        //Instanciar la clase correspondiente
+                        ProcessManagement processManagement = new ProcessManagement();
+
+                        //Instanciar la clase correspondiente
+                        ProcessShortTerm processShortTerm = new ProcessShortTerm(1,"Proceso 1",1,10);
+
+                        //Instanciar la clase correspondiente
+                        ProcessLongTerm processLongTerm = new ProcessLongTerm(2,"Proceso 2",2,"Requisitos");
+
+                        //Añadir procesos a la lista
+                        processManagement.addProcess(processShortTerm);
+                        processManagement.addProcess(processLongTerm);
+
+                        //Mostrar procesos
+                        processManagement.showProcesses();
 
                         Display.footer();
                     break;
