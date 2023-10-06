@@ -31,6 +31,9 @@ public class ProcessManagement{
         //Mostrar procesos
         public void showProcesses(){
             for (Process process : processes) {
+
+                Display.lineContent("",Optional.of("-"), Optional.empty());
+
                 System.out.println("ID: " + process.getId());
                 System.out.println("Nombre: " + process.getName());
                 System.out.println("Prioridad: " + process.getPriority());

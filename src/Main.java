@@ -184,6 +184,8 @@ public class Main {
                         //Instanciar la clase correspondiente
                         ProcessManagement processManagement = new ProcessManagement();
 
+                        Display.lineContent("Lista de Procesos", Optional.of("="), Optional.of("double"));
+
                         //Instanciar la clase correspondiente
                         ProcessShortTerm processShortTerm = new ProcessShortTerm(1,"Proceso 1",1,10);
 
