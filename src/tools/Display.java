@@ -12,7 +12,7 @@ public class Display extends Styles{
      * @param symbol Simbolo usado para centrar el texto
      * @param salt Tipo de salto de linea
      */
-    public static void lineConent(String content,Optional <String> symbol,Optional <String> salt){
+    public static void lineContent(String content,Optional <String> symbol,Optional <String> salt){
 
         //Si el caracter no esta presente, asignar un espacio
         if(!symbol.isPresent()){
@@ -37,6 +37,6 @@ public class Display extends Styles{
         
         System.out.println(printText("Bienvenido al sistema de aprendizaje",Optional.of("="),Optional.empty()));
 
-        lineConent(subtitle, Optional.of("="), Optional.of("down"));
+        lineContent(subtitle, Optional.of("="), Optional.of("down"));
     }
 }
