@@ -1,4 +1,4 @@
-package concessionaire;
+package poo.concessionaire;
 
 public class Taxi extends Vehicle{
     
