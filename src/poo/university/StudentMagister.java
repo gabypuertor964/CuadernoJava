@@ -1,4 +1,4 @@
-package university;
+package poo.university;
 
 public class StudentMagister extends Student{
     

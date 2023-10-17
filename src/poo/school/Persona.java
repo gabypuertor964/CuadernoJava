@@ -1,4 +1,4 @@
-package school;
+package poo.school;
 
 public class Persona {
 

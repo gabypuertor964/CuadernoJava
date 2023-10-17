@@ -1,4 +1,4 @@
-package process;
+package poo.process;
 
 public class ProcessLongTerm extends Process{
     

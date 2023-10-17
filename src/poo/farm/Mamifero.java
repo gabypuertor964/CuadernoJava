@@ -1,4 +1,4 @@
-package farm;
+package poo.farm;
 
 public class Mamifero {
 

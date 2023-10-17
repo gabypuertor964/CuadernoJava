@@ -1,4 +1,4 @@
-package university;
+package poo.university;
 
 public class Student extends Person{
     
