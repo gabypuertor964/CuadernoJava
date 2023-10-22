@@ -10,7 +10,7 @@ public class Triangle extends Figures{
     /* Metodo Constructor */
     public Triangle( int base, int height){
         //Ejecutar el constructor de la clase padre
-        super(4);
+        super(3);
 
         this.base = base;
         this.height = height;
@@ -23,6 +23,12 @@ public class Triangle extends Figures{
         @Override
         public String area(){
             return "El area del triangulo es: " + ((this.base * this.height) / 2);
+        }
+
+        //Obtener el numero de lados
+        @Override
+        public String sides(){
+            return "El triangulo tiene " + this.sides + " lados";
         }
     //
 

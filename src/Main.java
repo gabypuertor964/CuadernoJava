@@ -19,6 +19,8 @@ import abstract_class.artimetic.Aritmetic;
 import abstract_class.geometry.Square;
 import abstract_class.geometry.Triangle;
 
+import interfaces.Workers;
+
 import exceptions.try_manage.Manager;
 
 public class Main {
@@ -49,17 +51,18 @@ public class Main {
         },
         {2,"Clases abstractas",
             new Object[][]{
-                {1,"Aritmetica"}
+                {1,"Aritmetica"},
+                {2,"Geometria"}
             }
         },
-        {3,"Colecciones",
+        {3,"Interfaces",
             new Object[][]{
-
+                {1,"CRUD Empleados"}
             }
         },
         {4,"Excepciones",
             new Object[][]{
-                {1,"Gestionar"}
+
             }
         }
     };
@@ -298,6 +301,7 @@ public class Main {
                         Display.lineContent("Seleccione una figura", Optional.empty(), Optional.of("double"));
 
                         Display.lineContent("1. Cuadrado", Optional.empty(), Optional.of("up"));
+
                         Display.lineContent("2. Triangulo", Optional.empty(), Optional.of("down"));
 
                         System.out.print("Opción: ");
@@ -311,11 +315,11 @@ public class Main {
                                 //Imprimir la cabecera del aplicativo
                                 Display.header("Ha elegido Cuadrado");
 
-                                System.out.print("Lado: ");
-                                int side = Main.data.nextInt();
+                                System.out.print("Longitud del lado: ");
+                                int sideLong = Main.data.nextInt();
 
                                 //Instanciar la clase correspondiente
-                                Square square = new Square(side);
+                                Square square = new Square(sideLong);
 
                                 //Imprimir el area del cuadrado
                                 Display.lineContent(square.area(), Optional.empty(), Optional.of("up"));
@@ -331,14 +335,14 @@ public class Main {
                                 //Imprimir la cabecera del aplicativo
                                 Display.header("Ha elegido Triangulo");
 
-                                System.out.print("Base: ");
+                                System.out.print("Logitud base: ");
                                 int base = Main.data.nextInt();
 
-                                System.out.print("Altura: ");
+                                System.out.print("Logitud altura: ");
                                 int height = Main.data.nextInt();
 
                                 //Instanciar la clase correspondiente
-                                Triangle triangle = new Triangle(3, base, height)
+                                Triangle triangle = new Triangle(base, height);
 
                                 //Imprimir el area del triangulo
                                 Display.lineContent(triangle.area(), Optional.empty(), Optional.of("up"));
@@ -365,18 +369,7 @@ public class Main {
                 Os.clear();
 
                 //Imprimir la cabecera del aplicativo
-                Display.header("Ha elegido Colecciones");
-
-                Display.footer();
-            break;
-
-            //Excepciones
-            case 4:
-                //Limpiar la consola
-                Os.clear();
-
-                //Imprimir la cabecera del aplicativo
-                Display.header("Ha elegido Excepciones");
+                Display.header("Ha elegido Interfaces");
 
                 //Imprimir el submenú
                 for (Object[] subMenu : (Object[][]) menu[valueOption - 1][2]) {
@@ -385,49 +378,55 @@ public class Main {
                 }
 
                 System.out.print("Opción: ");
-                int subOption4 = Main.subOption.nextInt();
+                valueSubOption = Main.subOption.nextInt();
 
-                switch (subOption4) {
+                switch (valueSubOption) {
                     case 1:
                         //Limpiar la consola
                         Os.clear();
 
                         //Imprimir la cabecera del aplicativo
-                        Display.header("Ha elegido Gestionar Excepciones");
+                        Display.header("Ha elegido CRUD Empleados");
 
                         //Instanciar la clase correspondiente
-                        Manager manager = new Manager();
+                        Workers workers = new Workers();
 
-                        //Subtitulo
-                        Display.lineContent("Ingresar Textos a una lista", Optional.empty(), Optional.of("up"));
+                        //Insercion Trabajador
+                        Display.lineContent(workers.create("JOSE LUIS"), Optional.empty(), Optional.of("up"));
 
-                        //Complemento del Subtitulo
-                        Display.lineContent("Para dejar de añadir, escribe null", Optional.empty(), Optional.of("down"));  
+                        //Actualizacion Trabajador
+                        Display.lineContent(workers.update("JOSE LUIS"), Optional.empty(), Optional.empty());
 
-                        //Variable de control
-                        boolean control = true;
+                        //Eliminacion Trabajador
+                        Display.lineContent(workers.delete("JOSE LUIS"), Optional.empty(), Optional.of("down"));
 
-                        //Permitir la adicion de textos hasta que se ingrese null
-                        while(control){
-                            String value = Main.data.nextLine();
-                            
-                            if(value == "null"){
-                                System.out.println("Entro");
-                            }else{
-                                manager.addText(value);
-                            }
-                        }
-                        
-                        manager.showTexts();
+                        //Imprimir pie de Pagina
+                        Display.footer();
+
                     break;
-                
+
                     default:
                         Display.lineContent("Opcion Invalida", Optional.of("="), Optional.of("double"));
                     break;
                 }
+
             break;
 
-            
+            //Execepciones
+            case 4:
+                //Limpiar la consola
+                Os.clear();
+
+                //Imprimir la cabecera del aplicativo
+                Display.header("Ha elegido Excepciones");
+
+                //Instanciar la clase correspondiente
+                Manager manager = new Manager();
+
+                //Ejecutar la division e impirmir
+                Display.lineContent(manager.division(10, 0), Optional.empty(), Optional.of("down"));
+            break;
+
             default:
                 Display.lineContent("Opcion Invalida", Optional.of("="), Optional.of("double"));
             break;

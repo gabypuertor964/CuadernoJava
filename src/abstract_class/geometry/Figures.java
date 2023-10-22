@@ -3,7 +3,7 @@ package abstract_class.geometry;
 public abstract class Figures {
     
     /* Declaracion de Atributos */
-        private int sides;
+        public int sides;
     //
 
     /* Metodo Constructor */
@@ -13,5 +13,6 @@ public abstract class Figures {
     //
 
     public abstract String area();
+    public abstract String sides();
 
 }
