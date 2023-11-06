@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
+    <!--/*[
+        Importación dependencias externas:
+
+        th:href="@{/folder_static/archivo.extension}"
+    ]*/-->
+
+    <!-- Importación Hojas de estilo -->
+    <link th:href="@{/css/bootstrap.css}" href="../../static/css/bootstrap.css" rel="stylesheet">
+    <link th:href="@{/css/app.css}" href="../../static/css/app.css" rel="stylesheet">
+
+    <!-- Importación Script's -->
+    <script th:src="@{/js/bootstrap.js}" src="../../static/js/bootstrap.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Inicio de Sesión</title>
+</head>
+<body class="text-center">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card col-7">
+            <div class="card-header">
+                <h1>Formulario de registro</h1>
+            </div>
+            <div class="card-body">
+                <!-- Input: Nombre Completo -->
+                <div class="mb-3">
+                    <label for="" class="form-label">Digite su nombre completo</label>
+
+                    <input type="text" class="form-control text-center" name="" placeholder="Nombre Completo" required>
+                </div>
+
+                <!-- Input: Correo Electronico-->
+                <div class="mb-3">
+                    <label for="" class="form-label">Digite su correo Electronico</label>
+
+                    <input type="email" class="form-control text-center" name="" placeholder="correo@example.com" required>
+                </div>
+
+                <!-- Input: Contraseña -->
+                <div class="mb-3">
+                    <label for="" class="form-label">Digite su contraseña</label>
+
+                    <input type="password" class="form-control text-center" name="" placeholder="********" required>
+                </div>
+            </div>
+
+            <div class="card-footer text-muted">
+                <button type="submit" class="btn btn-primary col-12">Registrarme</button>
+
+                <div class="row p-1">
+                    <div class="col">
+                        <a href="">¿Ya estas registrado?, Inicia Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

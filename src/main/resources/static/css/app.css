@@ -6,6 +6,7 @@
 
 .card-body > div > label {
     font-style: italic;
+    font-size: 16px;
 }
 
 .col > a{
