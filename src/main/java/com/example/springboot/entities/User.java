@@ -43,7 +43,7 @@ public class User {
         return email;
     }
 
-    //Metodos Set (Modificación)
+    //Métodos Set (Modificación)
     public void setEmail(String email) {
         this.email = email;
     }

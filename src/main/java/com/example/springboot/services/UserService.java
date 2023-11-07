@@ -9,17 +9,13 @@ import org.springframework.stereotype.Service;
 import com.example.springboot.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-
-//Notación de servicio
 @Service
-public class UserService {
+public class UserServices {
 
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private static UserRepository userRepository;
+    private static PasswordEncoder passwordEncoder;
 
-    public User registerUser(String name, String email, String password){
+    public static User registerUser(String name, String email, String password) {
         User user = new User();
         user.setName(name);
         user.setEmail(email);
