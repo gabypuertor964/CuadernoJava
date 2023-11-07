@@ -9,9 +9,7 @@ public class AuthController {
 
     //Redirección por defecto al login
     @GetMapping(path = {"/"})
-    public String RedirectToLogin(){
-        return "redirect:/login";
-    }
+    public String RedirectToLogin(){return "redirect:/login";}
 
     //Retorno vista de inicio de Sesión
     @GetMapping(path = {"/login"})
